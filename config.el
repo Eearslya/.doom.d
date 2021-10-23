@@ -94,6 +94,9 @@
   ;; Turning it off ensures we have full control.
   (setq company-auto-commit-chars nil))
 
+(after! lsp-mode
+  (setq lsp-restart 'auto-restart))
+
 (map! (:when (featurep! :completion company)
        (:after company
 	(:map company-active-map
