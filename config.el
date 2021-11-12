@@ -101,7 +101,9 @@
   (setq lsp-restart 'auto-restart))
 
 (after! projectile
-  (setq projectile-project-search-path '("~/Dev"))
+  (setq projectile-auto-discover t
+        projectile-project-search-path '("~/Dev" "/Dev"))
+  (add-to-list 'projectile-globally-ignored-directories ".vs(code)?")
   (add-to-list 'projectile-globally-ignored-directories "[Ee]xternal")
   (add-to-list 'projectile-globally-ignored-directories "[Bb]uild"))
 
