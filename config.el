@@ -52,26 +52,21 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(setq lsp-clients-clangd-args '("-j=3"
-                                "--background-index"
-                                "--clang-tidy"
-                                "--completion-style=detailed"
-                                "--header-insertion=never"
-                                "--header-insertion-decorators=0"))
-(after! lsp-clangd (set-lsp-priority! 'clangd 2))
+(doom/set-indent-width 2)
+
+(setq-default
+ enable-local-variables t
+ tab-width 2)
+
 (setq c-basic-offset 2
       standard-indent 2
       tab-width 2)
-(setq-default
- tab-width 2)
-(doom/set-indent-width 2)
+
 (after! cc-mode
   (setq-default
    c-offsets-alist   '((access-label . /) (inclass . +) (innamespace . 0))
    indent-tabs-mode t
    tab-width 2))
-(after! projectile
-  (add-to-list 'projectile-globally-ignored-directories "build"))
 
 (after! company
   ;; <return> is for windowed Emacs; RET is for terminal Emacs
@@ -94,8 +89,21 @@
   ;; Turning it off ensures we have full control.
   (setq company-auto-commit-chars nil))
 
+(after! lsp-clangd (set-lsp-priority! 'clangd 2)
+  (setq lsp-clients-clangd-args '("-j=3"
+                                  "--background-index"
+                                  "--clang-tidy"
+                                  "--completion-style=detailed"
+                                  "--header-insertion=never"
+                                  "--header-insertion-decorators=0")))
+
 (after! lsp-mode
   (setq lsp-restart 'auto-restart))
+
+(after! projectile
+  (setq projectile-project-search-path '("~/Dev"))
+  (add-to-list 'projectile-globally-ignored-directories "[Ee]xternal")
+  (add-to-list 'projectile-globally-ignored-directories "[Bb]uild"))
 
 (map! (:when (featurep! :completion company)
        (:after company
