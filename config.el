@@ -102,10 +102,12 @@
 
 (after! projectile
   (setq projectile-auto-discover t
+	projectile-indexing-method 'native
         projectile-project-search-path '("~/Dev" "/Dev"))
   (add-to-list 'projectile-globally-ignored-directories ".vs(code)?")
   (add-to-list 'projectile-globally-ignored-directories "[Ee]xternal")
-  (add-to-list 'projectile-globally-ignored-directories "[Bb]uild"))
+  (add-to-list 'projectile-globally-ignored-directories "[Bb]uild")
+  (add-to-list 'projectile-globally-ignored-directories "[Dd]ocs"))
 
 (map! (:when (featurep! :completion company)
        (:after company
