@@ -107,6 +107,7 @@
 	projectile-project-configure-cmd "cmake -S . -B Build -DCMAKE_EXPORT_COMPILE_COMMANDS=On -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang -G\"Unix Makefiles\" -DCMAKE_BUILD_TYPE=Debug"
 	projectile-project-run-cmd "cmake --build Build --target Run --parallel 8"
 	projectile-project-compilation-cmd "cmake --build Build --parallel 8")
+  (add-to-list 'projectile-globally-ignored-directories ".cache")
   (add-to-list 'projectile-globally-ignored-directories ".vs(code)?")
   (add-to-list 'projectile-globally-ignored-directories "[Ee]xternal")
   (add-to-list 'projectile-globally-ignored-directories "[Bb]uild")
