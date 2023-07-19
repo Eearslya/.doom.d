@@ -56,3 +56,10 @@
                 projectile-project-run-cmd "cmake --build Build --target Run --parallel 8")
   (add-to-list 'projectile-globally-ignored-directories "^[Bb]uild$")
   (add-to-list 'projectile-globally-ignored-directories "^[Ee]xternal$"))
+
+(after! web
+  (setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2
+        web-mode-style-padding 0
+        web-mode-script-padding 0))
