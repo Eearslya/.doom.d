@@ -80,6 +80,7 @@
  (ruby +lsp +rails +rvm +tree-sitter)
  (sh +tree-sitter)
  (web +tree-sitter)
+ yaml
 
  :email
  
