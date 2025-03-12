@@ -387,7 +387,7 @@ emacs-lisp
 (json +tree-sitter)
 (markdown +grip)
 org
-(ruby +rails +rvm +tree-sitter)
+(ruby +lsp +rails +rvm +tree-sitter)
 (sh +tree-sitter)
 (web +tree-sitter)
 #+end_src
@@ -430,6 +430,9 @@ Use =org-auto-tangle= to automatically tangle Org files with code, just like thi
 
 Enforce a 2-space indentation width for everything we use.
 #+begin_src emacs-lisp
+(setq-default
+ indent-tabs-mode nil
+ tab-width 2)
 (setq-hook! c-mode
   c-basic-offset 2)
 (setq-hook! c++-mode

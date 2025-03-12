@@ -41,6 +41,9 @@
   :config
   (setq org-auto-tangle-default t))
 
+(setq-default
+ indent-tabs-mode nil
+ tab-width 2)
 (setq-hook! c-mode
   c-basic-offset 2)
 (setq-hook! c++-mode

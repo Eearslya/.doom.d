@@ -77,7 +77,7 @@
  (json +tree-sitter)
  (markdown +grip)
  org
- (ruby +rails +rvm +tree-sitter)
+ (ruby +lsp +rails +rvm +tree-sitter)
  (sh +tree-sitter)
  (web +tree-sitter)
 
