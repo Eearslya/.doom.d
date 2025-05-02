@@ -292,6 +292,11 @@ This module is responsible for keeping our code styled and neat. We enable the =
 (format +onsave)
 #+end_src
 
+I don't particularly like using templates, but they can be useful in some situations, and the editor seems to be quite upset with not having them, so I add them here.
+#+begin_src emacs-lisp :tangle no :noweb-ref Doom Editor Modules
+snippets
+#+end_src
+
 ** Emacs
 These modules augment and improve the default behavior of Emacs.
 

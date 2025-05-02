@@ -45,6 +45,7 @@
  file-templates
  fold
  (format +onsave)
+ snippets
 
  :emacs
  (dired +icons)
